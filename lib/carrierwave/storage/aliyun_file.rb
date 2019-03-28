@@ -26,15 +26,11 @@ module CarrierWave
       end
 
       def empty?
-        @path.nil? || ! self.exists?
+        @path.blank?
       end
 
       def exists?
-        res = bucket.get(@path)
-        true
-      rescue => e
-        puts "file is not exist in bucket"
-        false
+        @path.present?
       end
 
       ##
