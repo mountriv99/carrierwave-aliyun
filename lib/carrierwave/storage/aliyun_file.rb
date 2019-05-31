@@ -59,7 +59,7 @@ module CarrierWave
       end
 
       def headers
-        @headers ||= {}
+        @headers ||= bucket.head(@path)
       end
 
       private
