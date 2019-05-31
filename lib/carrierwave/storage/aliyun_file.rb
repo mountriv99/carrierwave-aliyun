@@ -62,6 +62,10 @@ module CarrierWave
         @headers ||= bucket.head(@path)
       end
 
+      def size
+        headers["content-length"]
+      end
+
       private
 
       def bucket
